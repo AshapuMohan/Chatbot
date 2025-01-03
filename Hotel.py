@@ -126,7 +126,8 @@ if user_input:
         for intent in intents:
                 if intent['tag'] == predicted_tag:
                         response = random.choice(intent['responses'])
-        st.write(f"Bot: {response}")
+        #st.write(f"Bot: {response}")
+        st.text_area("Chatbot:",value=response,height=120,max_chars=None,key=f"chatbot_response_{counter}")
 timestamp = datetime.now().strftime(f"%Y-%m-%d %H:%M:%S")
 #file.close()
 counter = 0
