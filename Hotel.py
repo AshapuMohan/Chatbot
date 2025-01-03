@@ -118,6 +118,7 @@ global response
 global user_input
 global timestamp
 user_input = st.text_input("You: ")
+counter = 0
 if user_input:
         # Convert input to vector and predict tag
         input_vector = vectorizer.transform([user_input])
@@ -130,7 +131,7 @@ if user_input:
         st.text_area("Chatbot:",value=response,height=120,max_chars=None,key=f"chatbot_response_{counter}")
 timestamp = datetime.now().strftime(f"%Y-%m-%d %H:%M:%S")
 #file.close()
-counter = 0
+counter += 1
 def main():
         
         global counter
